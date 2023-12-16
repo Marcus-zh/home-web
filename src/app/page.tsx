@@ -64,9 +64,6 @@ const styles = style9.create({
       boxShadow: "0 6px 20px rgba(0,118,255,0.23)",
       borderColor: "var(--hover-color)",
     },
-    ":hover a": {
-      color: "var(--text-color) !important",
-    },
   },
   primaryButton: {
     backgroundColor: "transparent",
@@ -81,6 +78,9 @@ const styles = style9.create({
     color: "var(--text-color)",
     textDecoration: "none",
     fontWeight: "bold",
+    ":hover": {
+      color: "inherit",
+    },
   },
 });
 

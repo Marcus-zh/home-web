@@ -3,18 +3,52 @@
   --black-color: rgb(19, 19, 19);
   --white-color: rgb(245, 251, 255);
   --text-color: var(--white-color);
+  --text-2-color: #161616;
   --title-color: var(--black-color);
   --bg-color: var(--white-color);
   --hover-color: rgba(0, 118, 255, 0.9);
   --hover-bg-color: #0070f3;
+  --shadow: 0 4px 14px 0 rgba(0,118,255,0.39);
+  --hover-shadow: 0 6px 20px rgba(0,118,255,0.23);
 }
 @media (prefers-color-scheme: dark) {
   :root {
     --main-color: #4b9bf7;
     --text-color: rgb(19, 19, 19);
+    --text-2-color: #d8d8d8;
     --title-color: rgb(245, 251, 255);
     --bg-color: var(--black-color);
-    --hover-color: rgba(0, 118, 255, 0.9);
+    --hover-color: #9cc8fa;
     --hover-bg-color: #9cc8fa;
+    --shadow: 0 2px 8px var(--main-color);
+    --hover-shadow: 0 3px 10px var(--hover-color);
+  }
+}
+
+/* 解决style9不支持a:hover b {} */
+.button:hover a {
+  color: var(--text-color) !important;
+}
+
+.title-small:hover span{
+  text-shadow: var(--hover-shadow);
+}
+
+/* 呼吸效果 */
+.name {
+  animation: breath 5s ease-in-out infinite;
+}
+@keyframes breath {
+  0% {
+    color: var(--main-color);
+    text-shadow: var(--shadow);
+  }
+  50% {
+    color: var(--hover-color);
+    text-shadow: var(--shadow);
+  }
+  100% {
+    color: var(--main-color);
+    text-shadow: var(--shadow);
   }
 }
